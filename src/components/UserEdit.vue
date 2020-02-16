@@ -1,16 +1,17 @@
 <template>
-    <div>Hi from user edit</div>
+    <div>
+        User Edit
+    </div>
 </template>
 
 <script>
-  export default {
-    name: "UserEdit",
 
-  }
 </script>
 
 <style scoped>
     div {
-        padding: 30px;
+        background-color: wheat;
+        padding: 100px;
     }
+
 </style>

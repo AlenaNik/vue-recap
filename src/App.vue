@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <User/>
+    <app-user></app-user>
   </div>
 </template>
 
@@ -11,13 +11,11 @@ import User from './components/User'
 export default {
   name: "App",
   components: {
-    User
+    appUser: User
   }
 };
 </script>
 
 <style>
-div.component {
-  border: 1px solid red;
-}
+
 </style>
