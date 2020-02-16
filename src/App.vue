@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <app-user></app-user>
+    <my-quote></my-quote>
   </div>
 </template>
 
 <script>
 
-import User from './components/User'
-
+import Quote from './components/Quote'
 export default {
-  name: "App",
   components: {
-    appUser: User
+    myQuote: Quote
   }
-};
+}
+
 </script>
 
 <style>
