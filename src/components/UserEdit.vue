@@ -19,7 +19,8 @@ export default {
     sumAge() {
       this.userage++;
      //  this.$emit('AgeUpdate', this.userage)
-      eventBus.$emit('AgeUpdate', this.userage)
+      // eventBus.$emit('AgeUpdate', this.userage)
+      eventBus.changeAge(this.userage)
     }
   }
 }
