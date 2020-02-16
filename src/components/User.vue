@@ -1,6 +1,9 @@
 <template>
     <div class="wrapper">
-        <app-user-detail></app-user-detail>
+       <p>User component</p>
+        {{ name }}
+        <button @click="changeName">Change name</button>
+        <app-user-detail :user="name" @nameWasReset="name = $event"></app-user-detail>
         <app-user-edit></app-user-edit>
     </div>
 </template>
@@ -9,6 +12,16 @@
 import UserDetails from './UserDetails'
 import UserEdit from './UserEdit'
 export default {
+  data: function() {
+    return {
+      name: 'Alena',
+    }
+  },
+  methods: {
+    changeName() {
+      this.name = 'Jaime'
+    }
+  },
   components: {
     appUserDetail: UserDetails,
     appUserEdit: UserEdit
@@ -19,7 +32,6 @@ export default {
 
 <style scoped>
     .wrapper {
-        height: 400px;
         background-color: lightblue;
         display: grid;
         grid-template-columns: 1fr 1fr;
