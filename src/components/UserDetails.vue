@@ -3,7 +3,10 @@
     User Details
     <p> User name: {{ user }}</p>
     <p> {{ backwardName() }}</p>
+    <p>{{ userage }}</p>
     <button @click="resetName">Reset a name</button>
+    <button @click="resetFn">Reset function</button>
+
 </div>
 </template>
 
@@ -13,7 +16,11 @@
         user: {
           type: String,
           required: true,
-        }
+        },
+        userage: {
+          type: Number
+        },
+        resetFn: Function
       },
 
       methods: {

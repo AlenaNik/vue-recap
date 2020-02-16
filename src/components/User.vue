@@ -3,8 +3,15 @@
        <p>User component</p>
         {{ name }}
         <button @click="changeName">Change name</button>
-        <app-user-detail :user="name" @nameWasReset="name = $event"></app-user-detail>
-        <app-user-edit></app-user-edit>
+        <app-user-detail
+                :user="name"
+                @nameWasReset="name = $event"
+                :resetFn="resetName"
+                :userage="age"
+        ></app-user-detail>
+        <app-user-edit :userage="age"
+                       @AgeUpdate="age = $event"
+        ></app-user-edit>
     </div>
 </template>
 
@@ -15,11 +22,15 @@ export default {
   data: function() {
     return {
       name: 'Alena',
+      age: 28
     }
   },
   methods: {
     changeName() {
       this.name = 'Jaime'
+    },
+    resetName() {
+      this.name = 'Baton'
     }
   },
   components: {
