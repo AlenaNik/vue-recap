@@ -7,6 +7,7 @@
 </template>
 
 <script>
+    import { eventBus } from '../main'
 export default {
   props: {
     userage: {
@@ -17,7 +18,8 @@ export default {
   methods: {
     sumAge() {
       this.userage++;
-      this.$emit('AgeUpdate', this.userage)
+     //  this.$emit('AgeUpdate', this.userage)
+      eventBus.$emit('AgeUpdate', this.userage)
     }
   }
 }

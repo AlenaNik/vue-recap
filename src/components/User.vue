@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
        <p>User component</p>
-        {{ name }}
+       <p> {{ age }} </p>
         <button @click="changeName">Change name</button>
         <app-user-detail
                 :user="name"
