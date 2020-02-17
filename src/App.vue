@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <my-quote></my-quote>
+    <my-quote>
+      <h2 slot="title">{{ quoteTitle }}</h2>
+      <p slot="content">A wonderful quote</p>
+    </my-quote>
   </div>
 </template>
 
@@ -8,6 +11,11 @@
 
 import Quote from './components/Quote'
 export default {
+  data: function() {
+    return {
+      quoteTitle: 'Quote from data'
+    }
+  },
   components: {
     myQuote: Quote
   }
@@ -15,6 +23,6 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 </style>

@@ -1,37 +1,18 @@
 <template>
     <div class="wrap">
-        <p>{{ quote }}</p>
-       <div v-for="catquote in catquotes" :key="catquote"
-       >{{ catquote }}</div>
-        <button @click="fetchCatFact">Fetch random quote 🐈</button>
+       <div class="title">
+           <slot name="title"></slot>
+       </div>
+        <div>
+            <slot name="content"></slot>
+        </div>
     </div>
 
 </template>
 
 <script>
-import axios from 'axios';
 
-export default {
-  props: {
-    quote: {
-      type: String
-    }
-  },
-  data() {
-    return {
-      catquotes: []
-    }
-  },
-  methods: {
-    fetchCatFact() {
-      axios.get("https://catfact.ninja/fact")
-        .then(res => (this.catquotes = res.data))
-      console.log(this.catquotes)
-    }
-  }
-}
 </script>
-
 <style scoped>
     .wrap {
         font-family: ".SF NS Mono";
@@ -55,6 +36,9 @@ export default {
         background-color: black;
         padding: 5px 10px;
         color: white
+    }
+    .title {
+        color: mediumslateblue;
     }
 
 </style>
