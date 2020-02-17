@@ -7,11 +7,15 @@
     <hr/>
     <button @click="selectedComponent = 'newQuote'">New</button>
 
-    <component :is="selectedComponent"></component>
-    <!--    <my-quote>-->
-<!--      <h2 slot="title">{{ quoteTitle }}</h2>-->
-<!--      <p>A wonderful quote</p>-->
-<!--    </my-quote>-->
+   <keep-alive>
+     <component :is="selectedComponent">
+       <p>Default</p>
+     </component>
+   </keep-alive>
+        <my-quote>
+      <h2 slot="title">{{ quoteTitle }}</h2>
+      <p>A wonderful quote</p>
+    </my-quote>
   </div>
 </template>
 
