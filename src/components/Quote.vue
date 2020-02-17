@@ -2,9 +2,10 @@
     <div class="wrap">
        <div class="title">
            <slot name="title"></slot>
+           <span><slot name="subtitle">Subtitle</slot></span>
        </div>
         <div>
-            <slot name="content"></slot>
+            <slot></slot>
         </div>
     </div>
 
